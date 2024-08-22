@@ -67,24 +67,25 @@ janela.configure(bg="#f0f0f0")
 
 # Carregar e definir o ícone da janela
 try:
-    icone_path = resource_path("seno.png")
+    icone_path = resource_path("Projetos/3-py-interface-trigonometria/seno.png")
     icone = Image.open(icone_path)
-    icone = ImageTk.Photoimage(icone)
+    icone = ImageTk.PhotoImage(icone)
     janela.iconphoto(True, icone)
 except FileNotFoundError:
     print("Imagem 'seno.png' não encontrada para o ícone")
 
 # Imagem seno2.png
 try:
-    icone_path = resource_path("seno2.png")
+    imagem_path = resource_path("Projetos/3-py-interface-trigonometria/seno2.png")
     imagem = Image.open(imagem_path)
     imagem = imagem.resize((380, 200), Image.LANCZOS)
     foto = ImageTk.PhotoImage(imagem)
-    label_imagem = tk.Label(janela, imagem-foto, bg="#f0f0f0", borderwidth=0)
+    label_imagem = tk.Label(janela, image=foto, bg="#f0f0f0", borderwidth=0)
     label_imagem.image = foto
     label_imagem.pack(pady=20)
 except FileNotFoundError:
-    label_imagem = tk.Label(janela, text="Imagem 'seno2.png não encontrada'", bg="#f0f0f0")
+
+    label_imagem = tk.Label(janela, text="Imagem 'seno2.png' não encontrada", bg="#f0f0f0")
     label_imagem.pack(pady=20)
 
 # Entrada do angulo
