@@ -1,4 +1,4 @@
-import app as ttk
+import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import os
 import sys
@@ -60,8 +60,8 @@ class FormularioInscricao:
         
         # CheckBox Lembrar dados
         self.lembrar_var = ttk.BooleanVar()
-        self.lembrar_combo = ttk.Checkbutton(self.opcoes_frame, text="Lembrar dados?", variable=self.lembrar_var, 
-        bootsyle="round-toggle")
+        self.lembrar_check = ttk.Checkbutton(self.opcoes_frame, text="Lembrar dados?", variable=self.lembrar_var, 
+        bootstyle="round-toggle")
         self.lembrar_check.pack("side=LEFT") 
         
         # ComboBox para seleção de temas
@@ -81,7 +81,7 @@ class FormularioInscricao:
         self.enviar_btn.pack(side=LEFT, expand=True)
         
         # Botão Cancelar
-        self.cancelar_btn = ttk.Button(self.botoes_frame, text="Cancelar", bootstyle="success", command=self.cancelar)
+        self.cancelar_btn = ttk.Button(self.botoes_frame, text="Cancelar", bootstyle="danger", command=self.cancelar)
         self.cancelar_btn.pack(side=RIGHT, expand=True)
         
 
