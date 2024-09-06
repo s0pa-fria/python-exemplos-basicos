@@ -18,7 +18,7 @@ class Calculadora:
     def __init__(self):
         self.janela = ttk.Window(themename="darkly")
         self.janela.geometry('400x750')
-        self.janela.title('Calculadora SENAI')
+        self.janela.title('Calculadora SENAI - por Soso')
 
         self.cor_fundo = 'black'
         self.cor_botao = 'secondary'
@@ -26,12 +26,15 @@ class Calculadora:
         self.cor_operador = 'warning'
         self.fonte_padrao = ('Roboto', 18)
         self.fonte_display = ('Roboto', 36)
+        
 
         icon_path = resource_path("calc.ico")
         self.janela.iconbitmap(icon_path)
 
         self.frame_display = ttk.Frame(self.janela)
         self.frame_display.pack(fill='both', expand=True)
+
+
 
         self.display = ttk.Label(
             self.frame_display,
@@ -45,6 +48,7 @@ class Calculadora:
 
         self.frame_botoes = ttk.Frame(self.janela)
         self.frame_botoes.pack(fill='both', expand=True)
+
 
         self.botoes = [
             ['C', 'Del', '^', '/'],
