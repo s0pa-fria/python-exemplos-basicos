@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Instrutor\Desktop\Testes_Py\py_telas\projeto-cadastro\venv
+set VIRTUAL_ENV=C:\Users\DEV_2ano_2024\Documents\GitHub\python-exemplos-basicos\Projetos\6-py-cadastro-com-bd\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
