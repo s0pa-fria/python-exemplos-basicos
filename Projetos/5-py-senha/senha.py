@@ -2,8 +2,8 @@
 import customtkinter as ctk
 from random import randint
 from PIL import Image, ImageTk
-import sys
 import os
+import sys
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -31,7 +31,7 @@ try:
     icon_photo = ImageTk.PhotoImage(icon_image)
     root.iconphoto(False, icon_photo)
 except Exception as e:
-    print("Não foi possível carregar o ícone: {e}")
+    print(f"Não foi possível carregar o ícone: {e}")
 
 # Função para gerar uma nova senha aleatória
 def new_rand():
@@ -64,23 +64,23 @@ def validate_length(input):
 validate_command = root.register(validate_length)
 
 # Cria o Frame para o input do comprimento da senha
-my_frame = ctk.CTkFrame(root)
-my_frame.pack(pady=20)
+lf = ctk.CTkFrame(root)
+lf.pack(pady=20)
 
 # Label para o input do comprimento da senha
-ctk.CTkLabel(my_frame, text="Quantos caracteres (Máximo 32)?", font=("Helvetica", 16)).pack(pady=10)
+ctk.CTkLabel(lf, text="Quantos caracteres (Máximo 32)?", font=("Helvetica", 16)).pack(pady=10)
 
 # Entry para o input do comprimento da senha com validação
-my_entry = ctk.CTkEntry(my_frame, font=("Helvetica", 24), validate="key", validatecommand=(validate_command, "%p"), width=50, justify="center")
-my_entry.pack(pady=20)
+my_entry = ctk.CTkEntry(lf, font=("Helvetica", 24), validate="key", validatecommand=(validate_command, '%P'), width=80, justify='center')
+my_entry.pack(pady=10)
 
 # Entry para exibir a senha gerada
-pw_entry = ctk.CTkEntry(my_frame, font=("Helvetica", 24), justify="center", width=500)
+pw_entry = ctk.CTkEntry(root, font=("Helvetica", 24), justify='center', width=500)
 pw_entry.pack(pady=20)
 
 # Frame para organizar os botões
-my_frame2 = ctk.CTkFrame(root)
-my_frame2.pack(pady=20)
+my_frame = ctk.CTkFrame(root)
+my_frame.pack(pady=20)
 
 # Carrega as imagens para os botões
 try:
@@ -88,7 +88,7 @@ try:
     copy_image = ctk.CTkImage(light_image=Image.open(resource_path("copy.png")), dark_image=Image.open(resource_path("copy.png")), size=(20, 20))
     clean_image = ctk.CTkImage(light_image=Image.open(resource_path("clean.png")), dark_image=Image.open(resource_path("clean.png")), size=(20, 20))
 except Exception as e:
-    print("Não foi possível carregar uma ou mais imagens dos botões: (e)")
+    print(f"Não foi possível carregar uma ou mais imagens dos botões: {e}")
     create_image = copy_image = clean_image = None
 
 # Botão para gerar a senha forte (verde)
