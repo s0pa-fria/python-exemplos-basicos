@@ -53,7 +53,7 @@ def clear_entry():
 
 # Função para validar o comprimento máximo do input
 def validate_length(input):
-    if input.isdigit() and len(input) < 2 and int(input) <= 32:
+    if input.isdigit() and len(input) <= 2 and int(input) <= 32:
         return True
     elif input == "":
         return True
